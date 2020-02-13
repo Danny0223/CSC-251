@@ -7,9 +7,11 @@
 #include <stdlib.h>
 #include <time.h>
 
+int generator(void);
+int prompt();
 int main(void)
 {
-	int x = 0, y = 0, z = 0;
+	int x = 0, y = 0, z = 0, count = 0;
 	//printf("Enter a Seed \n");
 	//scanf("%d",&y);
 	srand(time(NULL));
@@ -18,15 +20,25 @@ int main(void)
 
 	for(int a = 0; a<=10;a++)
 	{
-		x=rand()%31;
-		x=x+50;
-		printf("\n%d",x);
+		x=generator();
+		if(x==9)
+		{
+			count++;
+		}
 	}
+	printf("%d",count);
 	return EXIT_SUCCESS;
 }
 
+int generator(void)
+{
+	int x =rand()%10+1;
+	return x;
+}
 
+int prompt(void);
+{
 
-
+}
 
 
