@@ -15,14 +15,14 @@ int main(void)
 
 	int x = 0, c1 = 0, c2 = 0, c3 = 0,c4 = 0,c5 = 0,c6 = 0,c7 = 0,c8 = 0,c9 = 0,c10 = 0;
 	srand(time(NULL));
-
+	int y = 0;
 	x = prompt();
 
 
-	for(int a = 0; a <= x; a++)
+	for(int a = 1; a <= x; a++)
 	{
-		x = generator();
-		switch(x)
+		y = generator();
+		switch(y)
 		{
 			case 1:
 				c1++;
@@ -50,10 +50,9 @@ int main(void)
 			case 9:
 				c9++;
 			break;
-			//case 10:
-			//	c10++;
-			default:
+			case 10:
 				c10++;
+			default:
 			break;
 		}
 	}
@@ -76,5 +75,5 @@ int prompt(void)
 
 void result(int c1,int c2, int c3, int c4, int c5, int c6, int c7, int c8, int c9, int c10)
 {
-	printf("You had:\n %d ones\n %d twos\n %d threes\n %d fours\n %d fives\n %d sixes\n %d sevens\n %d eights\n %d nines\n %d tens\n",c1,c2,c3,c4,c5,c6,c7,c8,c9,10);
+	printf("You had:\n %d ones\n %d twos\n %d threes\n %d fours\n %d fives\n %d sixes\n %d sevens\n %d eights\n %d nines\n %d tens\n",c1,c2,c3,c4,c5,c6,c7,c8,c9,c10);
 }
