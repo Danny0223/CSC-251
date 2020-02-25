@@ -1,44 +1,36 @@
 //Danny Hernandez
 //CSC-251
-//2-10-2020
+//2-19-2020
 
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int generator(void);
-int prompt();
+void arrprint(int arrp[], int arrsoze);
+
 int main(void)
 {
-	int x = 0, y = 0, z = 0, count = 0;
-	//printf("Enter a Seed \n");
-	//scanf("%d",&y);
-	srand(time(NULL));
-	//x = rand()%10;
-	//printf("z = %d,y = %d,x = %d\n ",z,y,x);
+	int firstArray[5] = {0,2,4,6,8};
+	int secondArray[5] = {1,3,5,7,9};
+	int firstArray2[5];
+	int secondArray2[5];
 
-	for(int a = 0; a<=10;a++)
+	printf("Before Swap\n");
+
+	for (int i=0;i<5;i++)
 	{
-		x=generator();
-		if(x==9)
-		{
-			count++;
-		}
+		printf("firstArray[%d] = %d,secondArray[%d] = %d \n", i,firstArray[i],i,secondArray[i]);
+		secondArray2[i]=firstArray[i];
+		firstArray2[i]=secondArray[i];
+		firstArray[i]=firstArray2[i];
+		secondArray[i]=secondArray2[i];
 	}
-	printf("%d",count);
-	return EXIT_SUCCESS;
+
+	printf("After Swap\n");
+
+	for (int i=0;i<5;i++)
+	{
+		printf("firstArray[%d] = %d,secondArray[%d] = %d \n",i, firstArray2[i],i,secondArray2[i]);
+	}
 }
-
-int generator(void)
-{
-	int x =rand()%10+1;
-	return x;
-}
-
-int prompt(void);
-{
-
-}
-
-
